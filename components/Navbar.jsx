@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const links = [
     { name: "Ana səhifə", href: "/" },
@@ -16,12 +17,25 @@ export default function Navbar() {
     { name: "Əlaqə", href: "/contact" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-neutral-950/90 backdrop-blur border-b border-neutral-800">
+      <nav
+        className={`fixed top-0 w-full z-50 transition
+    ${
+      scrolled ? "bg-neutral-950 border-b border-neutral-800" : "bg-transparent"
+    }`}
+      >
         <div className="max-w-6xl mx-auto h-16 px-4 flex items-center justify-between">
-
           {/* Logo */}
           <Link href="/" className="text-xl font-semibold text-white">
             Karabakh<span className="text-emerald-500">Fitness</span>

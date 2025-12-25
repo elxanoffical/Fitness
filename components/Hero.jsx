@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="pt-32 pb-24 bg-neutral-950">
@@ -17,27 +20,33 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex gap-4">
-            <a
+            <Link
               href="/contact"
               className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded transition"
             >
               Qoşul
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="/services"
               className="border border-neutral-700 hover:border-emerald-500 text-neutral-300 px-6 py-3 rounded transition"
             >
               Paketlər
-            </a>
+            </Link>
           </div>
         </div>
 
-        {/* RIGHT VISUAL */}
+        {/* RIGHT CONTENT (IMAGE PLACEHOLDER) */}
         <div className="hidden md:block">
-          <div className="aspect-[4/5] bg-neutral-900 rounded flex items-center justify-center text-neutral-600">
-            {/* Buraya image/video gələcək */}
-            Fitness Image
+          <div className="aspect-[5/5] bg-neutral-900 rounded overflow-hidden flex items-center justify-center text-neutral-600">
+            {/* Burada next/image istifadə edəcəksən */}
+            <Image
+                src="/fitness-hero.jpg"
+              alt="Fitness Image"
+              width={400}
+              height={500}
+              className=" object-cover w-full h-full"
+            />
           </div>
         </div>
 
