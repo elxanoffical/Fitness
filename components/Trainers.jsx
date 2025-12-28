@@ -40,7 +40,7 @@ export default function Trainers() {
               className="bg-neutral-900 border border-neutral-800 rounded overflow-hidden"
             >
               {/* Image */}
-              <div className="aspect-[3/4] bg-neutral-800 flex items-center justify-center text-neutral-600">
+              <div className="aspect-[4/4] bg-neutral-800 flex items-center justify-center text-neutral-600">
                 <Image
                   src={trainer.image}
                   alt="Fitness Image"
