@@ -5,11 +5,11 @@ import Trainers from '@/components/Trainers'
 import Gallery from '@/components/Gallery'
 import React from 'react'
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
    <section>
-    <Navbar/>
     <Hero/>
     <Services/>
     <Trainers/>
