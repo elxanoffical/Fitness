@@ -5,7 +5,6 @@ import {
   FaHeartbeat,
   FaRunning,
   FaAppleAlt,
-  FaChild,
   FaFireAlt,
   FaSpa,
 } from "react-icons/fa";
@@ -15,23 +14,34 @@ export const metadata = {
   description:
     "Karabakh Fitness — fərdi və qrup məşqləri, cardio, strength, diet və recovery proqramları.",
 };
-
 const services = [
   {
-    title: "Fərdi Məşq Proqramları",
-    description: "Bədən quruluşunuza və məqsədinizə uyğun fərdi planlar.",
-    price: "100 AZN / ay",
-    slug: "ferdi-meshq",
+    id: 1,
+    title: "Fitness Zalı Üzvlüyü",
+    description:
+      "Cardio və güc zonaları, locker və duş otaqları ilə tam zal üzvlüyü.",
+    price: "100–900 AZN",
+    slug: "fitness-zali-uzvluyu",
     icon: FaDumbbell,
   },
   {
+    id: 2,
+    title: "Fərdi Məşq Proqramları",
+    description: "Bədən quruluşuna və məqsədinizə uyğun fərdi planlar.",
+    price: "100–900 AZN",
+    slug: "ferdi-meshq",
+    icon: FaHeartbeat,
+  },
+  {
+    id: 3,
     title: "Qrup Məşqləri",
-    description: "Motivasiyalı və enerjili qrup fitness dərsləri.",
-    price: "70 AZN / ay",
+    description: "Enerjili və motivasiyalı qrup dərsləri.",
+    price: "50–350 AZN",
     slug: "qrup-meshq",
     icon: FaUsers,
   },
   {
+    id: 4,
     title: "Cardio Zonası",
     description: "Yağ yandırma və dözümlülük üçün cardio avadanlıqları.",
     price: "Üzvlük daxilində",
@@ -39,39 +49,36 @@ const services = [
     icon: FaRunning,
   },
   {
+    id: 5,
     title: "Güc (Strength) Zonası",
-    description: "Əzələ kütləsinin artırılması üçün professional trenajorlar.",
+    description: "Əzələ inkişafı üçün professional trenajorlar.",
     price: "Üzvlük daxilində",
     slug: "guc-zonasi",
     icon: FaFireAlt,
   },
   {
+    id: 6,
     title: "Funksional Məşqlər",
-    description: "Bütün bədən üçün balans və çeviklik məşqləri.",
-    price: "80 AZN / ay",
+    description: "Balans, çeviklik və bədən nəzarəti məşqləri.",
+    price: "Üzvlük daxilində",
     slug: "funksional",
     icon: FaHeartbeat,
   },
   {
+    id: 7,
+    title: "Stretching & Recovery",
+    description: "Bərpa, rahatlama və zədələrin qarşısının alınması.",
+    price: "Üzvlük daxilində",
+    slug: "stretching",
+    icon: FaSpa,
+  },
+  {
+    id: 8,
     title: "Qidalanma Konsultasiyası",
     description: "Sağlam həyat üçün düzgün qida planı.",
     price: "50 AZN / konsultasiya",
     slug: "qida-konsultasiya",
     icon: FaAppleAlt,
-  },
-  {
-    title: "Uşaq Fitness Proqramları",
-    description: "Uşaqlar üçün təhlükəsiz və əyləncəli fiziki aktivlik.",
-    price: "60 AZN / ay",
-    slug: "usaq-fitness",
-    icon: FaChild,
-  },
-  {
-    title: "Stretching & Recovery",
-    description: "Bərpa, rahatlama və zədələrin qarşısının alınması.",
-    price: "40 AZN / ay",
-    slug: "stretching",
-    icon: FaSpa,
   },
 ];
 
@@ -91,7 +98,7 @@ export default function ServicesPage() {
       {/* SERVICES GRID */}
       <section className="px-4 max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service) => (
-          <ServiceCard key={service.slug} {...service} />
+          <ServiceCard key={service.id} {...service} />
         ))}
       </section>
     </main>
