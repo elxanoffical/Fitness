@@ -33,7 +33,7 @@ const trainers = [
   },
   {
     id: 3,
-    name: "Kamran Əliyev",
+    name: "Murad Hüseynov",
     role: "Fərdi məşqçi",
     experience: "5 il təcrübə",
     specialties: ["Fərdi proqramlar", "Funksional məşqlər"],
