@@ -64,7 +64,7 @@ export default async function TrainerDetailPage({ params }) {
 
   if (!trainer) {
     return (
-      <main className="pt-32 text-center text-neutral-400">
+      <main className="pt-32 text-center bg-neutral-950 text-neutral-400">
         Məşqçi tapılmadı
       </main>
     );
