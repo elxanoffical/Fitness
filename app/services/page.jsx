@@ -28,7 +28,7 @@ const services = [
     id: 2,
     title: "Fərdi Məşq Proqramları",
     description: "Bədən quruluşuna və məqsədinizə uyğun fərdi planlar.",
-    price: "100–900 AZN",
+    price: "200–1200 AZN",
     slug: "ferdi-meshq",
     icon: FaHeartbeat,
   },
