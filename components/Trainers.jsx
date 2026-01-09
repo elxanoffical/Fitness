@@ -21,7 +21,7 @@ export default function Trainers() {
   ];
 
   return (
-    <section className="py-24 bg-neutral-950">
+    <section className="py-16 bg-neutral-950">
       <div className="max-w-6xl mx-auto px-4">
         {/* Section title */}
         <div className="text-center max-w-2xl mx-auto">

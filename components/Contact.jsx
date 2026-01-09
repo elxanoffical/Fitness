@@ -17,7 +17,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-24 bg-neutral-950">
+    <section className="py-16 bg-neutral-950">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-start">
         {/* LEFT CTA */}
         <div>
