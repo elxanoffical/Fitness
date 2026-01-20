@@ -1,10 +1,6 @@
 import Link from "next/link";
-import {
-  FaDumbbell,
-  FaHeartbeat,
-  FaFireAlt,
-  FaUserTie,
-} from "react-icons/fa";
+import Image from "next/image";
+import { FaDumbbell, FaHeartbeat, FaFireAlt, FaUserTie } from "react-icons/fa";
 
 export const metadata = {
   title: "Məşqçilər – Karabakh Fitness",
@@ -16,6 +12,7 @@ const trainers = [
   {
     id: 1,
     name: "Elvin Məmmədov",
+    image: "/trainers/trainer-1new.jpg",
     role: "Baş məşqçi / Strength",
     experience: "8 il təcrübə",
     specialties: ["Güc məşqləri", "Bədən quruluşu"],
@@ -25,6 +22,7 @@ const trainers = [
   {
     id: 2,
     name: "Aysel Hüseynova",
+    image: "/trainers/trainer-2-new.jpg",
     role: "Fitness & Cardio məşqçisi",
     experience: "6 il təcrübə",
     specialties: ["Cardio", "Yağ yandırma"],
@@ -34,15 +32,17 @@ const trainers = [
   {
     id: 3,
     name: "Murad Hüseynov",
+    image: "/trainers/trainer-3-new.jpg",
     role: "Fərdi məşqçi",
     experience: "5 il təcrübə",
     specialties: ["Fərdi proqramlar", "Funksional məşqlər"],
-    slug: "kamran-eliyev",
+    slug: "murad-huseynov",
     icon: FaDumbbell,
   },
   {
     id: 4,
     name: "Nigar Rzayeva",
+    image: "/trainers/trainer-4.jpg",
     role: "Qrup məşqləri üzrə mütəxəssis",
     experience: "4 il təcrübə",
     specialties: ["Qrup fitness", "Stretching"],
@@ -60,7 +60,8 @@ export default function TrainersPage() {
           Məşqçilərimiz
         </h1>
         <p className="mt-4 text-lg text-neutral-400 max-w-2xl mx-auto">
-          Təcrübəli, sertifikatlı və motivasiya verən komanda ilə məqsədlərinə çat.
+          Təcrübəli, sertifikatlı və motivasiya verən komanda ilə məqsədlərinə
+          çat.
         </p>
       </section>
 
@@ -76,6 +77,7 @@ export default function TrainersPage() {
 
 function TrainerCard({
   name,
+  image,
   role,
   experience,
   specialties,
@@ -85,8 +87,20 @@ function TrainerCard({
   return (
     <div className="bg-neutral-900 border border-neutral-800 rounded p-6 hover:border-emerald-500 transition flex flex-col">
       {/* IMAGE PLACEHOLDER */}
-      <div className="w-full aspect-square bg-neutral-800 rounded mb-4 flex items-center justify-center text-neutral-600">
-        Photo
+      <div className="w-full aspect-square bg-neutral-900 border border-neutral-800 rounded overflow-hidden mb-4">
+        {image ? (
+          <Image
+            src={image}
+            alt={name}
+            width={400}
+            height={400}
+            className="object-cover w-full h-full"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center text-neutral-600">
+            Şəkil yoxdur
+          </div>
+        )}
       </div>
 
       <div className="flex items-center gap-2 text-emerald-500 text-sm">

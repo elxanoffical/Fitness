@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FaDumbbell,
   FaCertificate,
@@ -10,6 +11,7 @@ const trainersData = {
     name: "Elvin Məmmədov",
     role: "Baş məşqçi / Strength",
     experience: "8 il təcrübə",
+    image: "/trainers/trainer-1new.jpg",
     shortBio:
       "Güc məşqləri və bədən quruluşu üzrə ixtisaslaşmış peşəkar məşqçi.",
     bio: `
@@ -37,6 +39,7 @@ const trainersData = {
     name: "Aysel Hüseynova",
     role: "Fitness & Cardio məşqçisi",
     experience: "6 il təcrübə",
+    image: "/trainers/trainer-2-new.jpg",
     shortBio:
       "Cardio və yağ yandırma proqramları üzrə ixtisaslaşmış fitness məşqçisi.",
     bio: `
@@ -49,11 +52,70 @@ const trainersData = {
       "Qrup məşqləri",
       "Stretching & Recovery",
     ],
-    certifications: ["Group Fitness Instructor", "Cardio Training Certificate"],
+    certifications: [
+      "Group Fitness Instructor",
+      "Cardio Training Certificate",
+    ],
     services: [
       "Fitness Zalı Üzvlüyü",
       "Qrup Məşqləri",
       "Stretching & Recovery",
+    ],
+  },
+
+  "murad-huseynov": {
+    name: "Murad Hüseynov",
+    role: "Fərdi məşqçi",
+    experience: "5 il təcrübə",
+    image: "/trainers/trainer-3-new.jpg",
+    shortBio:
+      "Fərdi yanaşma və funksional məşqlər üzrə ixtisaslaşmış şəxsi məşqçi.",
+    bio: `
+      Murad Hüseynov üzvlər üçün fərdi proqramlar hazırlayaraq
+      qısa müddətdə effektiv və sağlam nəticələr əldə etməyə fokuslanır.
+    `,
+    specialties: [
+      "Fərdi məşq proqramları",
+      "Funksional məşqlər",
+      "Bədən balansı və çeviklik",
+      "Yeni başlayanlar üçün proqramlar",
+    ],
+    certifications: [
+      "Personal Trainer Certificate",
+      "Functional Training Specialist",
+    ],
+    services: [
+      "Fərdi Məşq Proqramları",
+      "Fitness Zalı Üzvlüyü",
+      "Funksional Məşqlər",
+    ],
+  },
+
+  "nigar-rzayeva": {
+    name: "Nigar Rzayeva",
+    role: "Qrup məşqləri üzrə mütəxəssis",
+    experience: "4 il təcrübə",
+    image: "/trainers/trainer-4.jpg",
+    shortBio:
+      "Qrup fitness və stretching sahəsində motivasiya yönümlü məşqçi.",
+    bio: `
+      Nigar Rzayeva qrup məşqlərində enerjili atmosfer yaradaraq
+      üzvlərin davamlılığını və motivasiyasını artırmağa fokuslanır.
+    `,
+    specialties: [
+      "Qrup fitness proqramları",
+      "Stretching & Recovery",
+      "Bodyweight məşqləri",
+      "Qadınlar üçün fitness",
+    ],
+    certifications: [
+      "Group Fitness Instructor",
+      "Stretching & Mobility Coach",
+    ],
+    services: [
+      "Qrup Məşqləri",
+      "Stretching & Recovery",
+      "Fitness Zalı Üzvlüyü",
     ],
   },
 };
@@ -76,8 +138,14 @@ export default async function TrainerDetailPage({ params }) {
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           {/* IMAGE */}
-          <div className="aspect-square bg-neutral-900 border border-neutral-800 rounded flex items-center justify-center text-neutral-600">
-            Trainer Photo
+          <div className="w-full aspect-square bg-neutral-900 border border-neutral-800 rounded overflow-hidden">
+            <Image
+              src={trainer.image}
+              alt={trainer.name}
+              width={500}
+              height={500}
+              className="w-full h-full object-cover"
+            />
           </div>
 
           {/* INFO */}

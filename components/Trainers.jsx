@@ -10,7 +10,7 @@ export default function TrainersSection() {
       experience: "8 il təcrübə",
       specialties: ["Güc məşqləri", "Bədən quruluşu"],
       slug: "elvin-memmedov",
-      image: "/trainers/trainer-1.jpg",
+      image: "/trainers/trainer-1new.jpg",
     },
     {
       id: 2,
@@ -64,7 +64,7 @@ function TrainerCard({ name, role, experience, specialties, slug, image }) {
           alt={name}
           width={400}
           height={400}
-          className="object-cover w-full h-full"
+          className="object-cover w-full h-[500px]"
         />
       </div>
 
