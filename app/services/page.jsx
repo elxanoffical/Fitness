@@ -14,71 +14,96 @@ export const metadata = {
   description:
     "Karabakh Fitness — fərdi və qrup məşqləri, cardio, strength, diet və recovery proqramları.",
 };
+
 const services = [
   {
     id: 1,
     title: "Fitness Zalı Üzvlüyü",
-    description:
-      "Cardio və güc zonaları, locker və duş otaqları ilə tam zal üzvlüyü.",
     price: "100–900 AZN",
     slug: "fitness-zali-uzvluyu",
     icon: FaDumbbell,
+    features: [
+      "Cardio və güc zonalarına tam giriş",
+      "Locker və duş otaqları",
+      "Təmiz və təhlükəsiz məşq mühiti",
+    ],
   },
   {
     id: 2,
     title: "Fərdi Məşq Proqramları",
-    description: "Bədən quruluşuna və məqsədinizə uyğun fərdi planlar.",
     price: "200–1200 AZN",
     slug: "ferdi-meshq",
     icon: FaHeartbeat,
+    features: [
+      "Bədən quruluşuna uyğun fərdi məşq",
+      "Peşəkar məşqçi dəstəyi",
+    ],
   },
   {
     id: 3,
     title: "Qrup Məşqləri",
-    description: "Enerjili və motivasiyalı qrup dərsləri.",
     price: "50–350 AZN",
     slug: "qrup-meshq",
     icon: FaUsers,
+    features: [
+      "Motivasiyalı və enerjili qrup dərsləri",
+      "Üzvlük daxilində cardio & strength sahələri",
+    ],
   },
   {
     id: 4,
     title: "Cardio Zonası",
-    description: "Yağ yandırma və dözümlülük üçün cardio avadanlıqları.",
     price: "Üzvlük daxilində",
     slug: "cardio-zona",
     icon: FaRunning,
+    features: [
+      "Cardio trenajorları (velosiped, treadmill, stepper)",
+      "Yağ yandırma və dözümlülük artımı",
+    ],
   },
   {
     id: 5,
     title: "Güc (Strength) Zonası",
-    description: "Əzələ inkişafı üçün professional trenajorlar.",
     price: "Üzvlük daxilində",
     slug: "guc-zonasi",
     icon: FaFireAlt,
+    features: [
+      "Əzələ inkişafı üçün ağırlıq avadanlıqları",
+      "Compound hərəkətlər üçün sərbəst zonalar",
+    ],
   },
   {
     id: 6,
     title: "Funksional Məşqlər",
-    description: "Balans, çeviklik və bədən nəzarəti məşqləri.",
     price: "Üzvlük daxilində",
     slug: "funksional",
     icon: FaHeartbeat,
+    features: [
+      "Balans və koordinasiya inkişafı",
+      "TRX, kettlebell, plyo box ilə məşqlər",
+    ],
   },
   {
     id: 7,
     title: "Stretching & Recovery",
-    description: "Bərpa, rahatlama və zədələrin qarşısının alınması.",
     price: "Üzvlük daxilində",
     slug: "stretching",
     icon: FaSpa,
+    features: [
+      "Bərpa və rahatlama texnikaları",
+      "Zədələrin qarşısını alma məşqləri",
+    ],
   },
   {
     id: 8,
     title: "Qidalanma Konsultasiyası",
-    description: "Sağlam həyat üçün düzgün qida planı.",
     price: "50 AZN / konsultasiya",
     slug: "qida-konsultasiya",
     icon: FaAppleAlt,
+    features: [
+      "Fərdi qida planlaması",
+      "Arıqlama və ya kütlə artırma dəstəyi",
+    ],
   },
 ];
 
@@ -105,7 +130,7 @@ export default function ServicesPage() {
   );
 }
 
-function ServiceCard({ title, description, price, slug, icon: Icon }) {
+function ServiceCard({ title, price, slug, icon: Icon, features }) {
   return (
     <div className="bg-neutral-900 border border-neutral-800 rounded p-6 flex flex-col justify-between hover:border-emerald-500 transition">
       <div>
@@ -114,7 +139,15 @@ function ServiceCard({ title, description, price, slug, icon: Icon }) {
         </div>
 
         <h3 className="mt-4 text-xl font-semibold text-white">{title}</h3>
-        <p className="mt-3 text-neutral-400 text-sm">{description}</p>
+
+        <ul className="mt-4 space-y-2 text-neutral-400 text-sm">
+          {features.map((item, i) => (
+            <li key={i} className="flex items-start gap-2">
+              <span className="text-emerald-500">•</span>
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="mt-6">
