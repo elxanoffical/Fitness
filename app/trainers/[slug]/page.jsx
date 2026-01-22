@@ -139,7 +139,7 @@ export default async function TrainerDetailPage({ params }) {
               alt={trainer.name}
               width={500}
               height={500}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover "
             />
           </div>
 
