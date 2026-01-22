@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="max-w-6xl mx-auto h-16 px-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="text-xl font-semibold text-white">
-            Karabakh<span className="text-emerald-500">Fitness</span>
+            Karabakh<span className="text-emerald-500 ">Fitness</span>
           </Link>
 
           {/* Desktop Links */}
