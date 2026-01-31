@@ -27,7 +27,7 @@ export default function Gallery() {
           {images.map((img, index) => (
             <div
               key={index}
-              className="aspect-square bg-neutral-900 border border-neutral-800 rounded overflow-hidden flex items-center justify-center text-neutral-600"
+              className="aspect-square cursor-pointer border transition hover:border-emerald-500 border-neutral-800 rounded overflow-hidden flex items-center justify-center text-neutral-600"
             >
               <Image
                 src={img}
