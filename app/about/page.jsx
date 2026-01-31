@@ -55,101 +55,84 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* OFFER + VALUES */}
-      <section className="py-24 px-4 bg-neutral-950">
-        <div className="max-w-6xl mx-auto">
-          {/* Heading */}
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-semibold text-white">
-              Nə təklif edirik və necə fərqlənirik?
-            </h2>
-            <p className="mt-4 text-neutral-400 text-lg">
-              Karabakh Fitness üzvlərinə yalnız məşq zalı deyil, peşəkar yanaşma
-              və davamlı nəticə təqdim edir.
-            </p>
-          </div>
+  <section className="py-24 px-4 bg-neutral-950">
+  <div className="max-w-6xl mx-auto">
+    <div className="text-center max-w-3xl mx-auto">
+      <h2 className="text-3xl font-semibold text-white">
+        Nə təklif edirik və necə fərqlənirik?
+      </h2>
+      <p className="mt-4 text-neutral-400 text-lg">
+        Sadəcə idman zalı yox, nəticə verən sistemli yanaşma: məqsədli məşqlər, düzgün yönləndirmə və motivasiya.
+      </p>
+    </div>
 
-          {/* Cards */}
-          <div className="mt-16 grid md:grid-cols-3 gap-8">
-            <InfoCard
-              title="Fərdi və Qrup Məşqləri"
-              text="Peşəkar məşqçilərlə məqsədinə uyğun fərdi və qrup proqramları."
-            />
-            <InfoCard
-              title="Cardio & Güc Zonaları"
-              text="Müasir trenajorlarla təchiz olunmuş cardio və strength sahələri."
-            />
-            <InfoCard
-              title="Rahat və Təmiz Mühit"
-              text="Geniş zal, locker otaqları və komfortlu məşq atmosferi."
-            />
+    <div className="mt-16 grid md:grid-cols-3 gap-8">
+      <InfoCard
+        title="Fərdi və Qrup Məşqləri"
+        text="Sertifikatlı məşqçilərlə istəyə uyğun fərdi planlar və enerjili qrup dərsləri."
+      />
+      <InfoCard
+        title="Cardio & Güc Zonaları"
+        text="Texnoloji avadanlıqlarla təchiz edilmiş sahələrdə performansını yüksəlt."
+      />
+      <InfoCard
+        title="Rahat və Təmiz Mühit"
+        text="Havalandırılan, təmiz və komfortlu şəraitdə rahat məşq et."
+      />
+      <InfoCard
+        title="Peşəkar Rəhbərlik"
+        text="İntizamlı məşq planları ilə məqsədə çatmaq üçün dayanmadan dəstək."
+      />
+      <InfoCard
+        title="Bütöv Fitness Təcrübəsi"
+        text="Yalnız fiziki deyil, zehni sağlamlığı da gücləndirən mühit."
+      />
+      <InfoCard
+        title="Davamlı Nəticə"
+        text="Motivasiyaedici metodlarla uzunmüddətli və davamlı irəliləyiş."
+      />
+    </div>
+  </div>
+</section>
 
-            <InfoCard
-              title="Professional Yanaşma"
-              text="Hər bir üzv üçün fərdi yanaşma və düzgün məşq strategiyası."
-            />
-            <InfoCard
-              title="Modern Mühit"
-              text="Təmiz, geniş və fokuslanmış məşq üçün ideal şərait."
-            />
-            <InfoCard
-              title="Davamlı Nəticə"
-              text="Qısa müddətli deyil, uzunmüddətli sağlamlıq hədəfləri."
-            />
-          </div>
-        </div>
-      </section>
+<section className="py-24 px-4 border-t border-neutral-800">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div>
+      <h2 className="text-3xl font-semibold text-white">
+        Niyə Karabakh Fitness?
+      </h2>
+      <p className="mt-6 text-lg text-neutral-400">
+        Bizimlə fərqli fitness təcrübəsi yaşayın — yalnız bədən deyil, həyat tərzi dəyişir.
+      </p>
 
-      {/* WHY CHOOSE US */}
-      <section className="py-24 px-4 border-t border-neutral-800">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-semibold text-white">
-              Niyə Karabakh Fitness?
-            </h2>
-            <p className="mt-6 text-lg text-neutral-400">
-              Bizim üçün fitness sadəcə məşq deyil. Bu, intizam, motivasiya və
-              davamlı inkişaf yoludur.
-            </p>
+      <ul className="mt-8 space-y-6 text-neutral-400">
+        <li>
+          <span className="text-white font-medium">Peşəkar komanda —</span> təcrübəli və daim inkişaf edən məşqçi heyəti
+        </li>
+        <li>
+          <span className="text-white font-medium">Yüksək standartlar —</span> müasir və təmiz mühit, ən son trenajorlar
+        </li>
+        <li>
+          <span className="text-white font-medium">Üzvlərə dəyər —</span> hər üzvə fərdi yanaşma və daimi dəstək
+        </li>
+        <li>
+          <span className="text-white font-medium">Əlçatan saatlar —</span> erkəndən gecəyə qədər rahat məşq imkanı
+        </li>
+      </ul>
+    </div>
 
-            <ul className="mt-8 space-y-6 text-neutral-400">
-              <li>
-                <span className="text-white font-medium">
-                  Təcrübəli komanda —
-                </span>{" "}
-                sertifikatlı və peşəkar məşqçilər
-              </li>
-              <li>
-                <span className="text-white font-medium">
-                  Müasir avadanlıqlar —
-                </span>{" "}
-                təhlükəsiz və effektiv məşq üçün
-              </li>
-              <li>
-                <span className="text-white font-medium">Dost atmosfer —</span>{" "}
-                motivasiya verən mühit və rahatlıq
-              </li>
-              <li>
-                <span className="text-white font-medium">
-                  Geniş iş saatları —
-                </span>{" "}
-                hər kəs üçün uyğun zaman
-              </li>
-            </ul>
-          </div>
+    <div className=" aspect-[4/3] overflow-hidden rounded border border-neutral-800">
+      <Image
+        src="/gallery/about-2.webp"
+        alt="Karabakh Fitness gym"
+        className="object-cover w-full h-full"
+        width={500}
+        height={400}
+      />
+    </div>
+  </div>
+</section>
 
-          {/* Visual */}
-           <div className=" aspect-[4/3] overflow-hidden rounded border border-neutral-800">
-            <Image
-              src="/gallery/about-2.webp"
-              alt="Karabakh Fitness gym"
-              className="object-cover w-full h-full"
-              width={500}
-              height={400}
-            />
-          </div>
-        </div>
-      </section>
 
       {/* MAP SECTION */}
       <section className="pb-24 px-4">
@@ -181,9 +164,10 @@ export default function AboutPage() {
 
 function InfoCard({ title, text }) {
   return (
-    <div className="bg-neutral-900 border border-neutral-800 rounded p-8">
+    <div className="bg-neutral-900 border border-neutral-800 rounded cursor-pointer p-8 transition hover:border-emerald-500 hover:bg-neutral-800">
       <h4 className="text-xl font-medium text-white">{title}</h4>
       <p className="mt-4 text-neutral-400">{text}</p>
     </div>
   );
 }
+
