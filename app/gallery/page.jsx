@@ -1,4 +1,3 @@
-import { FaImages } from "react-icons/fa";
 
 export const metadata = {
   title: "Qalereya – Karabakh Fitness",

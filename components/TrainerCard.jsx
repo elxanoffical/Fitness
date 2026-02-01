@@ -8,8 +8,8 @@ export default function TrainerCard({
   specialties,
   slug,
   image,
-  icon: Icon,       // optional icon
-  showIcon = false, // control icon display
+  icon: Icon,       
+  showIcon = false,
 }) {
   return (
     <div className="bg-neutral-900 border border-neutral-800 rounded overflow-hidden hover:border-emerald-500 transition flex flex-col h-full">
