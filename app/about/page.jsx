@@ -1,4 +1,12 @@
 import Image from "next/image";
+import {
+  FaUserFriends,
+  FaHeartbeat,
+  FaLeaf,
+  FaChalkboardTeacher,
+  FaDumbbell,
+  FaChartLine,
+} from "react-icons/fa";
 
 export const metadata = {
   title: "Haqqımızda – Karabakh Fitness",
@@ -54,85 +62,101 @@ export default function AboutPage() {
           ))}
         </div>
       </section>
+      <section className="py-24 px-4 bg-neutral-950">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl font-semibold text-white">
+              Nə təklif edirik və necə fərqlənirik?
+            </h2>
+            <p className="mt-4 text-neutral-400 text-lg">
+              Sadəcə idman zalı yox, nəticə verən sistemli yanaşma: məqsədli
+              məşqlər, düzgün yönləndirmə və motivasiya.
+            </p>
+          </div>
 
-  <section className="py-24 px-4 bg-neutral-950">
-  <div className="max-w-6xl mx-auto">
-    <div className="text-center max-w-3xl mx-auto">
-      <h2 className="text-3xl font-semibold text-white">
-        Nə təklif edirik və necə fərqlənirik?
-      </h2>
-      <p className="mt-4 text-neutral-400 text-lg">
-        Sadəcə idman zalı yox, nəticə verən sistemli yanaşma: məqsədli məşqlər, düzgün yönləndirmə və motivasiya.
-      </p>
-    </div>
+          <div className="mt-16 grid md:grid-cols-3 gap-8">
+            <InfoCard
+              icon={FaUserFriends}
+              title="Fərdi və Qrup Məşqləri"
+              text="Sertifikatlı məşqçilərlə istəyə uyğun fərdi planlar və enerjili qrup dərsləri."
+            />
+            <InfoCard
+              icon={FaHeartbeat}
+              title="Cardio & Güc Zonaları"
+              text="Texnoloji avadanlıqlarla təchiz edilmiş sahələrdə performansını yüksəlt."
+            />
+            <InfoCard
+              icon={FaLeaf}
+              title="Rahat və Təmiz Mühit"
+              text="Havalandırılan, təmiz və komfortlu şəraitdə rahat məşq et."
+            />
+            <InfoCard
+              icon={FaChalkboardTeacher}
+              title="Peşəkar Rəhbərlik"
+              text="İntizamlı məşq planları ilə məqsədə çatmaq üçün davamlı dəstək."
+            />
+            <InfoCard
+              icon={FaDumbbell}
+              title="Bütöv Fitness Təcrübəsi"
+              text="Yalnız fiziki deyil, zehni sağlamlığı da gücləndirən balanslı mühit."
+            />
+            <InfoCard
+              icon={FaChartLine}
+              title="Davamlı Nəticə"
+              text="Motivasiyaedici metodlarla uzunmüddətli və davamlı irəliləyiş."
+            />
+          </div>
+        </div>
+      </section>
 
-    <div className="mt-16 grid md:grid-cols-3 gap-8">
-      <InfoCard
-        title="Fərdi və Qrup Məşqləri"
-        text="Sertifikatlı məşqçilərlə istəyə uyğun fərdi planlar və enerjili qrup dərsləri."
-      />
-      <InfoCard
-        title="Cardio & Güc Zonaları"
-        text="Texnoloji avadanlıqlarla təchiz edilmiş sahələrdə performansını yüksəlt."
-      />
-      <InfoCard
-        title="Rahat və Təmiz Mühit"
-        text="Havalandırılan, təmiz və komfortlu şəraitdə rahat məşq et."
-      />
-      <InfoCard
-        title="Peşəkar Rəhbərlik"
-        text="İntizamlı məşq planları ilə məqsədə çatmaq üçün dayanmadan dəstək."
-      />
-      <InfoCard
-        title="Bütöv Fitness Təcrübəsi"
-        text="Yalnız fiziki deyil, zehni sağlamlığı da gücləndirən mühit."
-      />
-      <InfoCard
-        title="Davamlı Nəticə"
-        text="Motivasiyaedici metodlarla uzunmüddətli və davamlı irəliləyiş."
-      />
-    </div>
-  </div>
-</section>
+      <section className="py-24 px-4 border-t border-neutral-800">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-semibold text-white">
+              Niyə Karabakh Fitness?
+            </h2>
+            <p className="mt-6 text-lg text-neutral-400">
+              Bizimlə fərqli fitness təcrübəsi yaşayın — yalnız bədən deyil,
+              həyat tərzi dəyişir.
+            </p>
 
-<section className="py-24 px-4 border-t border-neutral-800">
-  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-    <div>
-      <h2 className="text-3xl font-semibold text-white">
-        Niyə Karabakh Fitness?
-      </h2>
-      <p className="mt-6 text-lg text-neutral-400">
-        Bizimlə fərqli fitness təcrübəsi yaşayın — yalnız bədən deyil, həyat tərzi dəyişir.
-      </p>
+            <ul className="mt-8 space-y-6 text-neutral-400">
+              <li>
+                <span className="text-white font-medium">
+                  Peşəkar komanda —
+                </span>{" "}
+                təcrübəli və daim inkişaf edən məşqçi heyəti
+              </li>
+              <li>
+                <span className="text-white font-medium">
+                  Yüksək standartlar —
+                </span>{" "}
+                müasir və təmiz mühit, ən son trenajorlar
+              </li>
+              <li>
+                <span className="text-white font-medium">Üzvlərə dəyər —</span>{" "}
+                hər üzvə fərdi yanaşma və daimi dəstək
+              </li>
+              <li>
+                <span className="text-white font-medium">
+                  Əlçatan saatlar —
+                </span>{" "}
+                erkəndən gecəyə qədər rahat məşq imkanı
+              </li>
+            </ul>
+          </div>
 
-      <ul className="mt-8 space-y-6 text-neutral-400">
-        <li>
-          <span className="text-white font-medium">Peşəkar komanda —</span> təcrübəli və daim inkişaf edən məşqçi heyəti
-        </li>
-        <li>
-          <span className="text-white font-medium">Yüksək standartlar —</span> müasir və təmiz mühit, ən son trenajorlar
-        </li>
-        <li>
-          <span className="text-white font-medium">Üzvlərə dəyər —</span> hər üzvə fərdi yanaşma və daimi dəstək
-        </li>
-        <li>
-          <span className="text-white font-medium">Əlçatan saatlar —</span> erkəndən gecəyə qədər rahat məşq imkanı
-        </li>
-      </ul>
-    </div>
-
-    <div className=" aspect-[4/3] overflow-hidden rounded border border-neutral-800">
-      <Image
-        src="/gallery/about-2.webp"
-        alt="Karabakh Fitness gym"
-        className="object-cover w-full h-full"
-        width={500}
-        height={400}
-      />
-    </div>
-  </div>
-</section>
-
+          <div className=" aspect-[4/3] overflow-hidden rounded border border-neutral-800">
+            <Image
+              src="/gallery/about-2.webp"
+              alt="Karabakh Fitness gym"
+              className="object-cover w-full h-full"
+              width={500}
+              height={400}
+            />
+          </div>
+        </div>
+      </section>
 
       {/* MAP SECTION */}
       <section className="pb-24 px-4">
@@ -162,12 +186,15 @@ export default function AboutPage() {
   );
 }
 
-function InfoCard({ title, text }) {
+function InfoCard({ icon: Icon, title, text }) {
   return (
-    <div className="bg-neutral-900 border border-neutral-800 rounded cursor-pointer p-8 transition hover:border-emerald-500 hover:bg-neutral-800">
-      <h4 className="text-xl font-medium text-white">{title}</h4>
-      <p className="mt-4 text-neutral-400">{text}</p>
+    <div className="bg-neutral-900 border cursor-pointer border-neutral-800 rounded p-8 transition hover:border-emerald-500 hover:bg-neutral-800">
+      <div className="w-12 h-12 flex items-center justify-center rounded bg-emerald-500/10 text-emerald-500 text-2xl">
+        <Icon />
+      </div>
+
+      <h4 className="mt-4 text-xl font-medium text-white">{title}</h4>
+      <p className="mt-3 text-neutral-400">{text}</p>
     </div>
   );
 }
-
