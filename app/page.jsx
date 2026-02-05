@@ -3,7 +3,7 @@ import Services from '@/components/Services'
 import Trainers from '@/components/Trainers'
 import Gallery from '@/components/Gallery'
 import React from 'react'
-import Contact from '@/components/Contact'
+import Contact from '@/components/ContactSection'
 
 export default function Home() {
   return (
