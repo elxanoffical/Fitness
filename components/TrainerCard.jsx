@@ -14,13 +14,13 @@ export default function TrainerCard({
   return (
     <div className="bg-neutral-900 border border-neutral-800 rounded overflow-hidden hover:border-emerald-500 transition flex flex-col h-full">
       {/* IMAGE (ölçü sabit saxlanılıb) */}
-      <div className="w-full aspect-[4/4] bg-neutral-800 flex items-center justify-center text-neutral-600">
+      <div className="w-full aspect-[4/4] bg-neutral-800  flex items-center justify-center text-neutral-600">
         <Image
           src={image}
           alt={name}
           width={400}
           height={400}
-          className="object-cover w-full h-[350px]"
+          className="object-cover overflow-hidden w-full h-[400px] md:h-[350px] "
         />
       </div>
 

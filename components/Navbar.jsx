@@ -42,7 +42,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Links */}
-          <ul className="hidden md:flex gap-8 text-sm">
+          <ul className="hidden lg:flex gap-8 text-sm">
             {links.map((link) => (
               <li key={link.name}>
                 <Link
@@ -58,7 +58,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <Link
             href="/contact"
-            className="hidden md:inline-flex bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded transition"
+            className="hidden lg:inline-flex bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded transition"
           >
             Qoşul
           </Link>
@@ -66,7 +66,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-neutral-200 focus:outline-none"
+            className="lg:hidden text-neutral-200 focus:outline-none"
             aria-label="Menu"
           >
             {open ? <FiX size={28} /> : <FiMenu size={28} />}
@@ -76,7 +76,7 @@ export default function Navbar() {
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden fixed inset-0 z-40 bg-neutral-950 pt-24 px-6">
+        <div className="lg:hidden fixed inset-0 z-40 bg-neutral-950 pt-24 px-6">
           <ul className="flex flex-col gap-6">
             {links.map((link) => (
               <li key={link.name}>

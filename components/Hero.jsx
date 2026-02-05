@@ -5,7 +5,6 @@ export default function Hero() {
   return (
     <section className="pt-32 pb-16 bg-neutral-950">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
-
         {/* LEFT CONTENT */}
         <div>
           <h1 className="text-4xl md:text-5xl font-semibold text-white leading-tight">
@@ -15,8 +14,8 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 text-neutral-400 text-lg max-w-md">
-            Peşəkar məşqçilər, müasir avadanlıqlar və balanslı məşq proqramları ilə
-            daha güclü və sağlam ol.
+            Peşəkar məşqçilər, müasir avadanlıqlar və balanslı məşq proqramları
+            ilə daha güclü və sağlam ol.
           </p>
 
           <div className="mt-10 flex gap-4">
@@ -41,15 +40,15 @@ export default function Hero() {
           <div className="aspect-[5/5] bg-neutral-900 rounded overflow-hidden flex items-center justify-center text-neutral-600">
             {/* Burada next/image istifadə edəcəksən */}
             <Image
-                src="/fitness-hero.jpg"
+              src="/fitness-hero.jpg"
               alt="Fitness Image"
               width={400}
               height={500}
+              priority
               className=" object-cover w-full h-full"
             />
           </div>
         </div>
-
       </div>
     </section>
   );
