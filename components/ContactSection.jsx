@@ -22,7 +22,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-16 bg-neutral-950">
+    <section className=" bg-neutral-950">
       <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-start">
         {/* LEFT SIDE INFO */}
         <div>
@@ -117,5 +117,5 @@ export default function ContactSection() {
         </form>
       </div>
     </section>
-  );
+  )
 }
