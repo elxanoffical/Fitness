@@ -1,6 +1,8 @@
 "use client";
 
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
+
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -17,8 +19,22 @@ export default function ContactSection() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data);
-    reset();
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      console.log(data);
+      if (!res.ok) throw new Error();
+
+      // alert("Mesaj göndərildi 👍");
+      toast.success("Mesaj uğurla göndərildi 👍");
+
+      reset();
+    } catch (error) {
+      toast.error("Xəta baş verdi. Yenidən yoxlayın.");
+    }
   };
 
   return (
@@ -108,7 +124,7 @@ export default function ContactSection() {
             {/* SUBMIT */}
             <button
               disabled={isSubmitting}
-              className="flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-neutral-900 font-semibold py-3 rounded transition disabled:opacity-50"
+              className="flex items-center justify-center cursor-pointer gap-2 bg-emerald-500 hover:bg-emerald-600 text-neutral-900 font-semibold py-3 rounded transition disabled:opacity-50"
             >
               <FaPaperPlane />
               {isSubmitting ? "Göndərilir..." : "Göndər"}
@@ -117,5 +133,5 @@ export default function ContactSection() {
         </form>
       </div>
     </section>
-  )
+  );
 }

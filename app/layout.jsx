@@ -1,4 +1,5 @@
 import "./globals.css";
+import ToastProvider from "@/components/ui/ToastProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -14,6 +15,8 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+          {/* GLOBAL TOASTS */}
+        <ToastProvider />
       </body>
     </html>
   );
