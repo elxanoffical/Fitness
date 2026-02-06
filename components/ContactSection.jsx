@@ -106,6 +106,11 @@ export default function ContactSection() {
                 placeholder="+994 XX XXX XX XX"
                 className="w-full bg-neutral-950 border border-neutral-800 rounded px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500"
               />
+              {errors.phone && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.phone.message}
+                </p>
+              )}
             </div>
 
             {/* MESSAGE */}
@@ -115,10 +120,15 @@ export default function ContactSection() {
               </label>
               <textarea
                 rows={5}
-                {...register("message")}
+                {...register("message", { required: "Mesaj mütləqdir" })}
                 placeholder="Mesajınızı yazın..."
                 className="w-full bg-neutral-950 border border-neutral-800 rounded px-4 py-3 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500"
               />
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">
+                  {errors.message.message}
+                </p>
+              )}
             </div>
 
             {/* SUBMIT */}

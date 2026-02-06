@@ -5,23 +5,23 @@ import { Toaster } from "react-hot-toast";
 export default function ToastProvider() {
   return (
     <Toaster
-      position="top-right"
+      position="top-center"
       toastOptions={{
         style: {
-          background: "#111",
-          color: "#fff",
+          background: "#fff",
+          color: "#000",
           border: "1px solid #222",
         },
         success: {
           iconTheme: {
             primary: "#10b981",
-            secondary: "#000",
+            secondary: "#fff",
           },
         },
         error: {
           iconTheme: {
             primary: "#ef4444",
-            secondary: "#000",
+            secondary: "#fff",
           },
         },
       }}
