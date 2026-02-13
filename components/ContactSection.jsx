@@ -54,7 +54,7 @@ export default function ContactSection() {
           <ul className="mt-8 space-y-5 text-neutral-400">
             <li className="flex items-center gap-4">
               <FaMapMarkerAlt className="text-emerald-500 text-xl" />
-              Bakı, Füzuli Əliyev küçəsi 14D
+              Bakı, 65-123 Xaqani Küçəsi
             </li>
 
             <li className="flex items-center gap-4">
@@ -64,7 +64,7 @@ export default function ContactSection() {
 
             <li className="flex items-center gap-4">
               <FaEnvelope className="text-emerald-500 text-xl" />
-              info@karabakhfitness.az
+              info@FitZone.az
             </li>
           </ul>
 

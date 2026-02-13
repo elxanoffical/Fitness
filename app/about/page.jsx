@@ -27,9 +27,8 @@ export default function AboutPage() {
             </h1>
 
             <p className="mt-6 text-lg text-neutral-400 max-w-xl">
-              Karabakh Fitness — Bakı şəhərində fəaliyyət göstərən modern
-              fitness mərkəzi olaraq, sağlam həyat tərzini hər kəs üçün əlçatan
-              edir.
+              FitZone — Bakı şəhərində fəaliyyət göstərən modern fitness mərkəzi
+              olaraq, sağlam həyat tərzini hər kəs üçün əlçatan edir.
             </p>
           </div>
 
@@ -112,9 +111,7 @@ export default function AboutPage() {
       <section className="py-24 px-4 border-t border-neutral-800">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-semibold text-white">
-              Niyə Karabakh Fitness?
-            </h2>
+            <h2 className="text-3xl font-semibold text-white">Niyə FitZone?</h2>
             <p className="mt-6 text-lg text-neutral-400">
               Bizimlə fərqli fitness təcrübəsi yaşayın — yalnız bədən deyil,
               həyat tərzi dəyişir.
@@ -165,14 +162,14 @@ export default function AboutPage() {
             Harada yerləşirik?
           </h3>
           <p className="mt-2 text-neutral-400">
-            Bakı, Füzuli Əliyev küçəsi 14D — Karabakh Fitness zalının ünvanı.
-            Ətraflı bax və marşrut qur.
+            Bakı, 65-123 Xaqani Küçəsi — FitZone zalının ünvanı. Ətraflı bax və
+            marşrut qur.
           </p>
 
           {/* MAP IFRAME */}
           <div className="mt-6 w-full h-80 border border-neutral-800 rounded overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.1812134693237!2d49.8922000110726!3d40.38267617132596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d0035ffeb9d%3A0xcaa0511b1ff75804!2sKarabakh%20Fitness!5e0!3m2!1saz!2saz!4v1767297026480!5m2!1saz!2saz"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1011.6881164988914!2d49.85841874853911!3d40.37705096876968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d00d48eebb7%3A0xbd4f4cadcccee157!2zOVZHNStROTksIEJha8Sx!5e1!3m2!1saz!2saz!4v1770638783413!5m2!1saz!2saz"
               width="100%"
               height="100%"
               className="border-0"
