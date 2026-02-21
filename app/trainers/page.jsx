@@ -1,19 +1,8 @@
 import TrainerCard from "@/components/TrainerCard";
-import {
-  FaDumbbell,
-  FaUsers,
-  FaHeartbeat,
-  FaRunning,
-  FaAppleAlt,
-  FaFireAlt,
-  FaSpa,
-  FaUserTie,
-} from "react-icons/fa";
 
 export const metadata = {
   title: "Məşqçilər – Karabakh Fitness",
-  description:
-    "Karabakh Fitness-in peşəkar və sertifikatlı məşqçiləri ilə tanış olun.",
+  description: "Karabakh Fitness-in peşəkar və sertifikatlı məşqçiləri ilə tanış olun.",
 };
 
 const trainers = [
@@ -25,7 +14,6 @@ const trainers = [
     experience: "8 il təcrübə",
     specialties: ["Güc məşqləri", "Bədən quruluşu"],
     slug: "elvin-memmedov",
-    icon: FaFireAlt,
   },
   {
     id: 2,
@@ -35,7 +23,6 @@ const trainers = [
     experience: "6 il təcrübə",
     specialties: ["Cardio", "Yağ yandırma"],
     slug: "aysel-huseynova",
-    icon: FaHeartbeat,
   },
   {
     id: 3,
@@ -45,7 +32,6 @@ const trainers = [
     experience: "5 il təcrübə",
     specialties: ["Fərdi proqramlar", "Funksional məşqlər"],
     slug: "murad-huseynov",
-    icon: FaDumbbell,
   },
   {
     id: 4,
@@ -55,7 +41,6 @@ const trainers = [
     experience: "4 il təcrübə",
     specialties: ["Qrup fitness", "Stretching"],
     slug: "nigar-rzayeva",
-    icon: FaUserTie,
   },
 ];
 
