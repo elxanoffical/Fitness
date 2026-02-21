@@ -26,153 +26,129 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* Variants */
-
-  const container = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
+  // Animasiya Variantları
+  const navVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: { 
+      y: 0, 
+      opacity: 1,
+      transition: { staggerChildren: 0.1, duration: 0.5, ease: "easeOut" }
+    }
   };
 
-  const item = {
-    hidden: { opacity: 0, y: -15 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  };
-
-  const mobileMenu = {
-    hidden: { opacity: 0, y: -30 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-    exit: {
-      opacity: 0,
-      y: -30,
-      transition: { duration: 0.3 },
-    },
+  const itemVariants = {
+    hidden: { y: -10, opacity: 0 },
+    visible: { y: 0, opacity: 1 }
   };
 
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition
-        ${scrolled
-            ? "bg-neutral-950 border-b border-neutral-800"
-            : "bg-transparent"
-          }`}
+        className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
+          scrolled
+            ? "bg-neutral-950/80 backdrop-blur-md border-b border-white/5 py-3"
+            : "bg-transparent py-5"
+        }`}
       >
-        <div className="max-w-6xl mx-auto h-16 px-4 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
+          
           {/* Logo */}
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
           >
-            <Link href="/" className="text-2xl font-semibold text-white">
-              Fit<span className="text-emerald-500">Zone</span>
+            <Link href="/" className="text-2xl font-bold text-white tracking-tighter">
+              FIT<span className="text-emerald-500">ZONE</span>
             </Link>
           </motion.div>
 
           {/* Desktop Links */}
-          <motion.ul
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="hidden lg:flex gap-8 text-sm"
-          >
-            {links.map((link) => (
-              <motion.li key={link.name} variants={item}>
+          <ul className="hidden lg:flex items-center gap-8">
+            {links.map((link, idx) => (
+              <motion.li 
+                key={link.name}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.05 }}
+              >
                 <Link
                   href={link.href}
-                  className="text-neutral-300 hover:text-emerald-400 transition"
+                  className="text-sm font-medium text-neutral-300 hover:text-emerald-500 transition-colors duration-300 relative group"
                 >
                   {link.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-emerald-500 transition-all duration-300 group-hover:w-full" />
                 </Link>
               </motion.li>
             ))}
-          </motion.ul>
+          </ul>
 
           {/* Desktop CTA */}
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="hidden lg:inline-flex"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="hidden lg:block"
           >
             <Link
               href="/contact"
-              className="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded transition"
+              className="bg-emerald-500 hover:bg-emerald-600 text-neutral-950 px-6 py-2.5 rounded-xl font-bold text-sm transition-all shadow-lg shadow-emerald-500/20"
             >
               Qoşul
             </Link>
           </motion.div>
 
-          {/* Mobile Button */}
-          <motion.button
-            whileTap={{ scale: 0.9 }}
+          {/* Mobile Toggle */}
+          <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden text-neutral-200"
+            className="lg:hidden text-white p-2 bg-neutral-900 rounded-lg border border-white/5"
           >
-            <motion.div
-              animate={{ rotate: open ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {open ? <FiX size={28} /> : <FiMenu size={28} />}
-            </motion.div>
-          </motion.button>
+            {open ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {open && (
           <motion.div
-            variants={mobileMenu}
-            initial="hidden"
-            animate="show"
-            exit="exit"
-            className="lg:hidden fixed inset-0 z-40 bg-neutral-950 pt-24 px-6"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-[90] bg-neutral-950 lg:hidden flex flex-col justify-center px-8"
           >
-            <motion.ul
-              variants={container}
-              initial="hidden"
-              animate="show"
-              className="flex flex-col gap-6"
-            >
-              {links.map((link) => (
-                <motion.li key={link.name} variants={item}>
+            <div className="space-y-8">
+              {links.map((link, idx) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.1 }}
+                >
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block text-xl text-neutral-200 border-b border-neutral-800 pb-3"
+                    className=" block text-xl text-neutral-200 border-b border-neutral-800 pb-3 transition-colors"
                   >
                     {link.name}
                   </Link>
-                </motion.li>
+                </motion.div>
               ))}
-            </motion.ul>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="mt-10 block text-center bg-emerald-600 hover:bg-emerald-500 text-white py-4 rounded text-lg"
+              
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.6 }}
+                className="pt-8 border-t border-white/5"
               >
-                Qoşul
-              </Link>
-            </motion.div>
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="inline-block w-full text-center bg-emerald-500 text-neutral-950 py-4 rounded-2xl font-bold text-xl"
+                >
+                  Qoşul
+                </Link>
+              </motion.div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
