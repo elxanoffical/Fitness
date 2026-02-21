@@ -2,6 +2,7 @@ import "./globals.css";
 import ToastProvider from "@/components/ui/ToastProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata = {
   title: "FitZone",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <ScrollToTop />
           {/* GLOBAL TOASTS */}
         <ToastProvider />
       </body>
