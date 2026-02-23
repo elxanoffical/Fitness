@@ -84,8 +84,7 @@ export default function ServicesPreview() {
               variants={cardVariants}
               initial="hidden"
               whileInView="show"
-              // amount: 0.2 - kartın 20%-i görünəndə animasiya başlayır
-              viewport={{ once: true, amount: 0.5 }}
+              viewport={{ once: true, amount: 0.4 }}
               whileHover={{ 
                 y: -10,
                 transition: { duration: 0.3 }
