@@ -124,9 +124,9 @@ export default function ServicesPage() {
     <main className="bg-neutral-950 text-neutral-100 pb-32">
       
       {/* HERO SECTION */}
-      <section className="relative pt-40 pb-20 px-4 overflow-hidden">
+      <section className="relative pt-40 pb-20 px-4 ">
         {/* Dekorativ arxa fon işığı */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
         
         <motion.div 
           initial="hidden"
