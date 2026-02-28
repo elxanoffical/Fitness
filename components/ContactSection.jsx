@@ -36,44 +36,49 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-24 bg-neutral-950 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-16 items-center">
+   <section className="relative pt-12 md:pt-24 pb-24 bg-neutral-950 overflow-hidden">
+      
+      {/* Background Glow - Digər səhifələrlə eyni (Trainers/Gallery) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 lg:gap-16 items-start relative z-10">
         
         {/* SOL TƏRƏF - INFO */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          className="pt-4" // Yazıların bir az daha aşağıdan başlaması üçün
         >
-          <h2 className="text-4xl font-bold text-white tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter">
             Bizimlə <span className="text-emerald-500">Əlaqə</span> Saxla
           </h2>
-          <div className="w-16 h-1 bg-emerald-500 mt-4 rounded-full mb-6" />
+          <div className="w-16 h-1 bg-emerald-500 mt-6 rounded-full mb-8" />
 
-          <p className="text-neutral-400 text-lg leading-relaxed max-w-md">
-            Sualların var? Paketlər və məşq proqramları haqqında ətraflı məlumat
-            almaq üçün formu doldur, komandamız səninlə əlaqə saxlasın.
+          <p className="text-neutral-400 text-lg md:text-xl leading-relaxed max-w-md">
+            Sualların var? Komandamız sənə kömək etməyə hazırdır. 
+            Formu doldur, ən qısa zamanda geri dönək.
           </p>
 
-          <div className="mt-10 space-y-6">
+          <div className="mt-12 space-y-6">
             {[
-              { icon: FaMapMarkerAlt, text: "Bakı, 65-123 Xaqani Küçəsi" },
-              { icon: FaPhoneAlt, text: "+994 XX XXX XX XX" },
-              { icon: FaEnvelope, text: "info@FitZone.az" },
-              { icon: FaClock, text: "İş saatları: 06:30 – 00:00", highlight: "06:30 – 00:00" }
+              { icon: FaMapMarkerAlt, text: "Bakı, Karabakh Fitness Center" },
+              { icon: FaPhoneAlt, text: "+994 50 123 45 67" },
+              { icon: FaEnvelope, text: "info@karabakhfitness.az" },
+              { icon: FaClock, text: "Hər gün: 07:00 – 23:00" }
             ].map((item, index) => (
               <motion.div 
                 key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center gap-4 group"
+                className="flex items-center gap-5 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-neutral-950 transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-neutral-950 transition-all duration-500">
                   <item.icon size={20} />
                 </div>
-                <span className="text-neutral-300 font-medium">
+                <span className="text-neutral-300 font-medium text-lg">
                   {item.text}
                 </span>
               </motion.div>
@@ -83,87 +88,56 @@ export default function ContactSection() {
 
         {/* SAĞ TƏRƏF - FORM */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative"
+          transition={{ duration: 0.6 }}
+          className="relative mt-8 md:mt-0"
         >
-          {/* Form Glow Background */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-3xl blur-2xl opacity-30" />
+          {/* Form Glow Effect */}
+          <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-full opacity-50" />
           
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="relative bg-neutral-900/50 border border-neutral-800 rounded-2xl p-8 md:p-10 backdrop-blur-sm shadow-2xl"
+            className="relative bg-neutral-900/40 border border-white/5 rounded-[2.5rem] p-8 md:p-10 backdrop-blur-xl shadow-2xl"
           >
             <div className="grid gap-6">
-              {/* NAME */}
               <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-2">
-                  Adınız
-                </label>
+                <label className="block text-sm font-semibold text-neutral-500 mb-2 ml-1">ADINIZ</label>
                 <input
                   {...register("name", { required: "Ad mütləqdir" })}
-                  placeholder="Ad Soyad"
-                  className="w-full bg-neutral-950/50 border border-neutral-800 rounded-xl px-4 py-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all"
+                  placeholder="Məs: Elvin Məmmədov"
+                  className="w-full bg-neutral-950/50 border border-neutral-800 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-emerald-500/50 transition-all"
                 />
-                {errors.name && (
-                  <p className="text-red-500/80 text-xs mt-2 ml-1 italic">
-                    {errors.name.message}
-                  </p>
-                )}
               </div>
 
-              {/* PHONE */}
               <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-2">
-                  Telefon
-                </label>
+                <label className="block text-sm font-semibold text-neutral-500 mb-2 ml-1">TELEFON</label>
                 <input
                   {...register("phone", { required: "Telefon mütləqdir" })}
-                  placeholder="+994 XX XXX XX XX"
-                  className="w-full bg-neutral-950/50 border border-neutral-800 rounded-xl px-4 py-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all"
+                  placeholder="+994"
+                  className="w-full bg-neutral-950/50 border border-neutral-800 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-emerald-500/50 transition-all"
                 />
-                {errors.phone && (
-                  <p className="text-red-500/80 text-xs mt-2 ml-1 italic">
-                    {errors.phone.message}
-                  </p>
-                )}
               </div>
 
-              {/* MESSAGE */}
               <div>
-                <label className="block text-sm font-medium text-neutral-400 mb-2">
-                  Mesajınız
-                </label>
+                <label className="block text-sm font-semibold text-neutral-500 mb-2 ml-1">MESAJINIZ</label>
                 <textarea
                   rows={4}
                   {...register("message", { required: "Mesaj mütləqdir" })}
-                  placeholder="Mesajınızı bura yazın..."
-                  className="w-full bg-neutral-950/50 border border-neutral-800 rounded-xl px-4 py-4 text-white placeholder:text-neutral-600 focus:outline-none focus:border-emerald-500/50 focus:ring-1 focus:ring-emerald-500/50 transition-all resize-none"
+                  placeholder="Sualınız və ya qeydiniz..."
+                  className="w-full bg-neutral-950/50 border border-neutral-800 rounded-2xl px-5 py-4 text-white focus:outline-none focus:border-emerald-500/50 transition-all resize-none"
                 />
-                {errors.message && (
-                  <p className="text-red-500/80 text-xs mt-2 ml-1 italic">
-                    {errors.message.message}
-                  </p>
-                )}
               </div>
 
-              {/* SUBMIT */}
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={isSubmitting}
-                className="flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-neutral-950 font-bold py-4 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-emerald-500/20"
+                className="flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-600 text-neutral-950 font-bold py-5 rounded-2xl transition-all shadow-xl shadow-emerald-500/20 mt-2"
               >
-                {isSubmitting ? (
-                  <div className="w-5 h-5 border-2 border-neutral-950/30 border-t-neutral-950 rounded-full animate-spin" />
-                ) : (
-                  <>
-                    <FaPaperPlane className="text-sm" />
-                    <span>Mesajı Göndər</span>
-                  </>
-                )}
+                {isSubmitting ? "Göndərilir..." : "Mesajı Göndər"}
+                {!isSubmitting && <FaPaperPlane className="text-sm" />}
               </motion.button>
             </div>
           </form>
