@@ -63,9 +63,9 @@ export default function ContactSection() {
 
           <div className="mt-12 space-y-6">
             {[
-              { icon: FaMapMarkerAlt, text: "Bakı, Karabakh Fitness Center" },
+              { icon: FaMapMarkerAlt, text: "Bakı, FitZone Fitness Center" },
               { icon: FaPhoneAlt, text: "+994 50 123 45 67" },
-              { icon: FaEnvelope, text: "info@karabakhfitness.az" },
+              { icon: FaEnvelope, text: "info@fitzonefitness.az" },
               { icon: FaClock, text: "Hər gün: 07:00 – 23:00" }
             ].map((item, index) => (
               <motion.div 
