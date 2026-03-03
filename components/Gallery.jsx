@@ -10,12 +10,12 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const images = [
-    "/gallery/img-1.jpg",
-    "/gallery/img-2.jpg",
-    "/gallery/img-3.jpg",
-    "/gallery/img-4.jpg",
-    "/gallery/img-5.jpg",
-    "/gallery/img-6.jpg",
+    "/gallery/img1.webp",
+    "/gallery/img2.webp",
+    "/gallery/img3.webp",
+    "/gallery/img4.webp",
+    "/gallery/img5.webp",
+    "/gallery/img6.webp",
   ];
 
   // Şəkillərin sırayla çıxması üçün variantlar
