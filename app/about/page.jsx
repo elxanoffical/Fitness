@@ -193,7 +193,7 @@ export default function AboutPage() {
           >
             <div className="text-left">
               <h3 className="text-3xl font-bold text-white">Harada yerləşirik?</h3>
-              <p className="mt-2 text-neutral-400 text-lg">Bakı, 65-123 Xaqani Küçəsi — Səni gözləyirik!</p>
+              <p className="mt-2 text-neutral-400 text-lg">Bakı, 74 Üzeyir Hacıbəyli — Səni gözləyirik!</p>
             </div>
             <motion.button 
               whileHover={{ scale: 1.05 }} 
@@ -212,7 +212,7 @@ export default function AboutPage() {
             className="w-full h-[450px] border border-white/10 rounded-3xl overflow-hidden shadow-2xl grayscale invert contrast-125 opacity-80 hover:grayscale-0 hover:invert-0 transition-all duration-700"
           >
             <iframe
-              src="https://www.google.com/maps/embed?..." 
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.953701060513!2d49.85988285780885!3d40.37802632320658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307de6caf9ec91%3A0xd31e8577d4f695ff!2sPort%20Baku%20Walk!5e0!3m2!1saz!2saz!4v1772541685525!5m2!1saz!2saz"
               width="100%"
               height="100%"
               className="border-0"

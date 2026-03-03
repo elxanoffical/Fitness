@@ -105,7 +105,7 @@ export default function Footer() {
             <h4 className="text-white font-bold mb-6 tracking-wide uppercase text-xs">Məlumat</h4>
             <ul className="space-y-5 text-sm">
               {[
-                { label: "Ünvan", value: "Bakı, 65-123 Xaqani Küçəsi" },
+                { label: "Ünvan", value: "Bakı, 74 Üzeyir Hacıbəyli," },
                 { label: "Telefon", value: "+994 XX XXX XX XX" },
                 { label: "İş Saatları", value: "06:30 – 00:00 (Hər gün)", color: "text-emerald-500/90" }
               ].map((info, idx) => (
